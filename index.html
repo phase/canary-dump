@@ -1,0 +1,21 @@
+---
+title: Canary Dump
+---
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hack/0.7.7/hack.css" />
+  </head>
+  <body class="hack container">
+    <h1>Canary Dump</h1>
+    <p>This contains all the jars previously hosted on 
+        <a href="https://web.archive.org/web/20150402074904/http://canarymod.net:80/plugins">CanaryMod's website</a>.
+    </p>
+    <ul>
+      {% for file in site.static_files %}
+      {% if file.extname == ".jar" %}
+      <li><a href="{{ site.baseurl }}{{ file.path }}">{{ file.path }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </body>
+</html>
